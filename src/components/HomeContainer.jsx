@@ -30,11 +30,8 @@ const HomeContainer = () => {
           </span>
         </p>
 
-        <p className="text-base text-textColor text-center md:text-left md:w-[80%]">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima velit
-          eaque fugit distinctio est nam voluptatum architecto, porro iusto
-          deserunt recusandae ipsa minus eos sunt, dolores illo repellat facere
-          suscipit!
+        <p className="text-base text-textColor md:w-[80%] leading-loose">
+        Are you hungry? Did you have a long and stressful day? Interested in getting a cheesy pizza delivered to your office or looking to avoid the weekly shop? Then Foodi Zone is the right destination for you! Foodi Zone offers you detailed list of the best foods near you to help make your everyday easier. Our online food delivery service has it all.
         </p>
 
         <button

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { MdOutlineKeyboardBackspace } from "react-icons/md";
 import { RiRefreshFill } from "react-icons/ri";
-
+import Swal from "sweetalert2";
 import { motion } from "framer-motion";
 import { useStateValue } from "../context/StateProvider";
 import { actionType } from "../context/reducer";
@@ -48,7 +48,24 @@ const CartContainer = () => {
       cartShow: !cartShow,
     });
     localStorage.setItem("cartItems", JSON.stringify([]));
-    toast.success(`${user.displayName}, Your Order Placed Successfully`);
+    Swal.fire(
+      "Order Placed!",
+      `Dear! ${user?.displayName}, Your order has been placed successfully. We will deliver your order to your location soon.`,
+      "success"
+    );
+  };
+
+  const checkOutFailed = () => {
+    dispatch({
+      type: actionType.SET_CARTITEMS,
+      cartItems: [],
+    });
+    dispatch({
+      type: actionType.SET_CART_SHOW,
+      cartShow: !cartShow,
+    });
+    localStorage.setItem("cartItems", JSON.stringify([]));
+    toast.error("Order Failed! Please login first.");
   };
 
   return (
@@ -118,15 +135,16 @@ const CartContainer = () => {
                 className="w-full p-2 rounded-full bg-gradient-to-tr from-orange-400 to-orange-600 text-gray-50 text-lg my-2 hover:shadow-lg"
                 onClick={checkOut}
               >
-                Check Out
+                Checkout
               </motion.button>
             ) : (
               <motion.button
                 whileTap={{ scale: 0.8 }}
                 type="button"
                 className="w-full p-2 rounded-full bg-gradient-to-tr from-orange-400 to-orange-600 text-gray-50 text-lg my-2 hover:shadow-lg"
+                onClick={checkOutFailed}
               >
-                Login to check out
+                Login to checkout
               </motion.button>
             )}
           </div>

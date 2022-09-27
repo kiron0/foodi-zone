@@ -78,11 +78,11 @@ const Header = () => {
             <li className="text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer">
               Contact
             </li>
-            {user && (
+            {/* {user && (
               <li className="text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer">
                 Dashboard
               </li>
-            )}
+            )} */}
           </motion.ul>
 
           <div
