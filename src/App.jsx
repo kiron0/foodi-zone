@@ -9,8 +9,7 @@ import { Toaster } from "react-hot-toast";
 import NotFound from "./components/NotFound";
 
 const App = () => {
-  // const [{ foodItems }, dispatch] = useStateValue();
-  const [dispatch] = useStateValue();
+  const [{ foodItems }, dispatch] = useStateValue();
 
   const fetchData = async () => {
     await getAllFoodItems().then((data) => {

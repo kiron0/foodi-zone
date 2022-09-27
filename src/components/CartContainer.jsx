@@ -48,7 +48,7 @@ const CartContainer = () => {
       cartShow: !cartShow,
     });
     localStorage.setItem("cartItems", JSON.stringify([]));
-    toast.success("Order Placed Successfully");
+    toast.success(`${user.displayName}, Your Order Placed Successfully`);
   };
 
   return (
