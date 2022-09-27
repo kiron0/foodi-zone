@@ -30,7 +30,7 @@ const Header = () => {
         user: providerData[0],
       });
       localStorage.setItem("user", JSON.stringify(providerData[0]));
-    toast.success(`Welcome to Foodi Zone, ${providerData[0].displayName}`);
+    toast.success(`Hey! ${providerData[0].displayName}, Welcome to Foodi Zone.`);
     } else {
       setIsMenu(!isMenu);
     }
